@@ -1,0 +1,320 @@
+
+/***************************************************************/
+/*Typografie*/
+
+h1 {
+    font-size: 50px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+
+h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+h3 {
+    font-size: 10px;
+    margin-bottom: 10px;
+}
+
+p {
+    font-family: "articulat", sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+
+/***************************************************************/
+/*Allgemeines Styling*/
+
+body {
+    margin: 0;
+    font-family: "bely-display", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: black;
+    background-color: whitesmoke;
+}
+
+body * {
+    box-sizing: border-box;
+}
+
+.contentwidth {
+    width: 90%;
+    margin: auto;
+    max-width: 1000px;
+}
+
+
+/*************************************/
+/*Header*/
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: none;
+}
+
+.logo img {
+    width: 350px;
+    height: auto;
+}
+
+.navbar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: none;
+    padding: 10px 20px;
+}
+
+.hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 9;
+}
+
+.bar {
+    background-color: orangered;
+    height: 3px;
+    width: 25px;
+    margin: 3px 0;
+    transition: all 0.3s ease;
+}
+
+.menu {
+    display: none;
+    flex-direction: column;
+    background-color: black;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 25%;
+    text-align: center;
+    transform: translateX(100%);
+    padding: 150px 20px 20px;
+    transition: width 0.3s ease; /* Animiere die Breite des Menüs */
+    transform: translateX(100%);
+    position: fixed;
+    height: 100vh;
+    top: 0;
+}
+
+.menu a {
+    color: whitesmoke;
+    text-decoration: none;
+    text-transform: uppercase;
+    margin: 10px 0;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.menu.active {
+    display: flex;
+    animation: slideIn 0.3s ease forwards;
+    width: 25%;
+}
+
+.menu.active a {
+    opacity: 1;
+}
+
+@keyframes slideIn {
+    to {
+        transform: translateX(0);
+    }
+}
+
+.hamburger-menu.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.active .bar:nth-child(1) {
+    transform: translateY(0) rotate(45deg);
+    transform-origin-x: 0%;
+}
+
+.hamburger-menu.active .bar:nth-child(3) {
+    transform: translateY(0) rotate(-45deg);
+    transform-origin-x: 0%;
+}
+
+
+
+/*************************************/
+/*Content*/
+
+
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+
+/*************************************/
+/*Footer*/
+
+.footer {
+    background-color: orangered;
+    color: white;
+    font-family: "articulat", sans-serif;
+    font-size: 16px;
+    text-align: left;
+    margin-top: 20px;
+    padding: 5px 15px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer .right-content {
+    min-width: 115px;
+}
+
+.footer a {
+    color: white;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+
+/***************************************************************/
+/*Spezifisches Styling*/
+
+.custom-button {
+    background-color: orangered; /* Hintergrundfarbe des Buttons */
+    color: whitesmoke; /* Textfarbe des Buttons */
+    border: none; /* Kein Rahmen um den Button */
+    padding: 7px 10px; /* Innenabstand des Buttons (oben/unten links/rechts) */
+    text-align: center; /* Zentriert den Text im Button */
+    text-decoration: none; /* Keine unterstrichenen Links im Button */
+    display: inline-block; /* Macht den Button zu einem Inline-Block-Element */
+    font-family: "articulat", sans-serif;
+    font-size: 11px; /* Schriftgröße des Buttons */
+    margin: 0px; /* Außenabstand des Buttons */
+    cursor: pointer; /* Ändert den Mauszeiger, wenn über den Button gehalten wird */
+    border-radius: 2px; /* Runde Ecken für den Button */
+}
+
+/* Änderungen, wenn der Mauszeiger über dem Button ist */
+.custom-button:hover {
+    background-color: black; /* Dunklere Hintergrundfarbe im Hover-Zustand */
+}
+
+
+
+/* Stil Pop-up-Fensters*/
+.popup {
+    opacity: 0;
+    visibility: hidden;
+
+    left: 50%;
+    top: 50%;
+    position: fixed;
+    background-color: whitesmoke;
+    padding: 20px;
+    width: 80%; /* Breite des Pop-up-Fensters */
+    max-width: 500px;
+    height: 60%; /* Höhe des Pop-up-Fensters */
+    overflow: auto; /* Scrollfeld für den Inhalt */
+    transform: translate(-50%, -50%);
+    background-color: whitesmoke;
+    border: 5px solid black; /* Schwarzer Rand um das Pop-Up-Fenster */
+}
+
+.popup img {
+    display: block; /* Macht das Bild zu einem Blockelement */
+    margin: 0 auto; /* Automatische Seitenränder (links und rechts) für Zentrierung */
+    max-width: 100%; /* Stellt sicher, dass das Bild nicht breiter als das Pop-Up-Fenster ist */
+    height: auto; /* Automatische Anpassung der Höhe, um das Bildverhältnis beizubehalten */
+}
+
+/* Mach popup sichtbar*/
+.popup:target {
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.popup [data-button="close"] {
+    position: absolute;
+    top: 10px; /* Abstand vom oberen Rand */
+    right: 10px; /* Abstand vom rechten Rand */
+    display: block;
+    background: none;
+    color: black;
+    font-size: 20px;
+    font-family: "articulat", sans-serif;
+    border: none;
+    padding: 1em;
+    text-decoration: none;
+    z-index: 9999; /* Stelle sicher, dass der Button über dem Popup-Inhalt liegt */
+}
+
+.popup [data-button="close"]:hover {
+    background: none;
+    color: orangered;
+    border: none;
+}
+
+
+
+
+.themen_raster  {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/*Alle Boxen*/
+.themen_raster article {
+    width: 45%;
+    padding: 10px;
+}
+
+/*Einzelne Boxen*/
+#box1 {
+
+}
+
+
+
+/*************************************/
+/*teaser*/
+.teaser_container article {
+    display: flex;
+}
+
+.teaser_container article:nth-child(2n) {
+    flex-direction: row-reverse;
+}
+
+.teaser_container article > * {
+    width: 100%;
+}
+
+.teaser_text {
+    padding: 2%;
+}
+
+
+
+/*************************************/
+/*Responsive Design*/
+
+@media only screen and (max-width: 767px) {
+    .teaser_container article {
+        flex-direction: column-reverse!important;
+    }
+  }
