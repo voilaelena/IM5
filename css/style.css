@@ -20,11 +20,15 @@ h3 {
     margin-bottom: 10px;
 }
 
+h1, h2, h3 {hyphens: auto;}
+
 p {
     font-family: "articulat", sans-serif;
     font-size: 16px;
     line-height: 1.6;
 }
+
+
 
 
 /***************************************************************/
@@ -119,7 +123,7 @@ header {
 .menu.active {
     display: flex;
     animation: slideIn 0.3s ease forwards;
-    width: 25%;
+    width: 250px;
 }
 
 .menu.active a {
@@ -139,11 +143,13 @@ header {
 .hamburger-menu.active .bar:nth-child(1) {
     transform: translateY(0) rotate(45deg);
     transform-origin-x: 0%;
+    -webkit-transform-origin-x: 0;
 }
 
 .hamburger-menu.active .bar:nth-child(3) {
     transform: translateY(0) rotate(-45deg);
     transform-origin-x: 0%;
+    -webkit-transform-origin-x: 0;
 }
 
 
@@ -156,6 +162,36 @@ header {
 img {
     max-width: 100%;
     height: auto;
+}
+
+.img-border {
+    border: 5px solid black;
+}
+
+
+/*************************************/
+/*Landingpage*/
+
+.thema {
+    display: flex;
+    border-bottom: 4px solid black;
+    margin-bottom: 30px;
+    column-gap: 50px;
+}
+
+
+.big-number span {
+    font-size: 100px;
+}
+
+.big-number {
+    text-align: end;
+    width: 150px;
+}
+
+.thema-inhalt {
+    flex: 1;
+
 }
 
 
@@ -271,6 +307,13 @@ img {
 
 
 
+/*************************************/
+/*SVG Grafik*/
+
+
+.st0{fill:whitesmoke;stroke:#000000;stroke-width:8.5075;stroke-miterlimit:10; cursor: pointer;}
+
+#marken_svg g:hover polygon {fill: orangered;}
 
 .themen_raster  {
     display: flex;
@@ -283,17 +326,13 @@ img {
     padding: 10px;
 }
 
-/*Einzelne Boxen*/
-#box1 {
-
-}
-
 
 
 /*************************************/
 /*teaser*/
 .teaser_container article {
     display: flex;
+    margin-top: 50px;
 }
 
 .teaser_container img {
@@ -320,6 +359,7 @@ img {
 
 
 
+
 /*************************************/
 /*Responsive Design*/
 
@@ -327,4 +367,14 @@ img {
     .teaser_container article {
         flex-direction: column-reverse!important;
     }
+    .teaser_container article > * {
+        width: 100%;
+    }
+    .thema {
+        flex-direction: column!important;
+    }
+    .big-number {
+        text-align: left;
+    }
+
   }
