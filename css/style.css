@@ -41,6 +41,13 @@ body {
     font-style: normal;
     color: black;
     background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
 }
 
 body * {
@@ -154,6 +161,8 @@ header {
 
 
 
+
+
 /*************************************/
 /*Content*/
 
@@ -166,6 +175,7 @@ img {
 
 .img-border {
     border: 5px solid black;
+    max-width: 100%;
 }
 
 
@@ -199,7 +209,7 @@ img {
 /*************************************/
 /*Footer*/
 
-.footer {
+footer {
     background-color: orangered;
     color: white;
     font-family: "articulat", sans-serif;
@@ -212,17 +222,16 @@ img {
     justify-content: space-between;
     align-items: center;
 }
-.footer .right-content {
+footer .right-content {
     min-width: 115px;
 }
-
-.footer a {
+footer a {
     color: white;
     text-decoration: none;
     margin-left: 10px;
 }
 
-.footer a:hover {
+footer a:hover {
     text-decoration: underline;
 }
 
@@ -361,6 +370,18 @@ img {
 
 
 /*************************************/
+/*Kontakt */
+.kontakt_flexbox {
+    display: flex; 
+    flex-direction: row; 
+    justify-content: space-between; 
+    align-items: flex-start;
+}
+.kontakt_text {padding-right: 20px;}
+
+
+
+/*************************************/
 /*Responsive Design*/
 
 @media only screen and (max-width: 767px) {
@@ -375,6 +396,9 @@ img {
     }
     .big-number {
         text-align: left;
+    }
+    .kontakt_flexbox {
+        flex-direction: column-reverse;
     }
 
   }
